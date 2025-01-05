@@ -46,6 +46,13 @@ venv を使い、プロジェクトごとにパッケージを使い分けられ
   * Linter は flake8 を用いてください
   * api は zipcloud を用いてください
 
-# （ここ以下を中野さんに修正いただきたいです）
 ## タスク４：comfy ui を使ってみる
+用意した[スライド](https://docs.google.com/presentation/d/1ZHw_5ZWXcORP126wJmbFmvjfG9h9KZZW/edit?usp=drive_link&ouid=102839788932558976251&rtpof=true&sd=true)に沿って進める。
+
+以下のリンクの資料を使ってください。
+
+[controlnet_lora.json](https://drive.google.com/file/d/18loAoeaqxf8KyMyJBwVaq1kyO3erNPV7/view?usp=drive_link)
+
+[input2.png](https://drive.google.com/file/d/13DcLpFtfAD8141GQ-eW2cFolm4VQFR3g/view?usp=drive_link)
+
 [こちら](https://github.com/comfyanonymous/ComfyUI)を参考に、colab 上で comfy ui を起動し、何らかの画像を生成してみてください。

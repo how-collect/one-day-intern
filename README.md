@@ -1,6 +1,6 @@
-# one-day-intern
+# one day intern
 ワンデイインターン生向けのタスクを格納したリポジトリです。
 
-## AI チーム
+## AI 開発チーム
 * [rag](./rag/)
 * [generative image](./generate-image/)

@@ -1,27 +1,20 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+from openai import OpenAI
+import openai
+import os
 
-# 使用するモデル名を指定する．
-model_name = "gpt2"  # GPT‐2 モデルを使用する．
 
-# トークナイザーをロードする．
-tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-# モデルをロードする．
-model = AutoModelForCausalLM.from_pretrained(model_name)
+client = OpenAI()
 
-# プロンプトを定義する．
-prompt = "相対性理論とは"
+prompt = input("ここに入力してください：")
 
-# プロンプトをトークン化する．
-inputs = tokenizer(prompt, return_tensors="pt")
+completion = client.chat.completions.create(
+    model="gpt-4",  
+    messages=[
+        {"role": "system", "content": "あなたは有能なアシスタントです。"},
+        {"role": "user", "content": prompt}
+    ],
+)
 
-# テキストを生成する．
-outputs = model.generate(**inputs, max_length=100, do_sample=True, temperature=0.7)
-
-# 生成されたトークンをテキストに変換する．
-generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-# 結果を出力する．
-print("生成されたテキスト：")
-print(generated_text)
+# 生成された回答を出力
+print(completion.choices[0].message.content)
